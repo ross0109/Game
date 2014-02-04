@@ -3,18 +3,12 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour {
 
-	public GameObject DogeSprite;
-	public GameObject CatSprite;
+	public Transform Doge;
+	public Transform Cat;
 	public Vector3 center;
 
-	void Start(){
-		DogeSprite = GameObject.Find ("DogeParent");
-		CatSprite = GameObject.Find ("CatParent");
-	}
-
 	void Update () {
-		center = ((DogeSprite.transform.localPosition + CatSprite.transform.localPosition) / 2.0f);
-		center.z = -15f;
-		transform.localPosition = center;
+		//center = ((Doge.localPosition.x - Cat.localPosition.x)/2.0f) + Cat.localPosition.x;
+		//transform.LookAt(center);
 	}
 }

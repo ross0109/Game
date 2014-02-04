@@ -2,24 +2,18 @@ using UnityEngine;
 using System.Collections;
 
 public class Doge : MonoBehaviour {
-	Animator animator;
 	public Vector2 newPos = new Vector2 (0f, 0f);
 	private float gravity = -1f;
-	private float speed = 10f;
+	private float speed = 15f;
 	private float jumpHeight = .4f;
 	private float maxGravity = -.4f;
-	public CharacterController controller;
 	private float height = 0f;
 	private float checkHeight;
 	public int count = 0;
-	float moveDir;
-	bool faceL = false;
-	Vector3 scale = new Vector3(2f, 2f, 1f);
-
+	public CharacterController controller;
 		
 	void Start () {
-		controller = transform.parent.GetComponent<CharacterController>();
-		animator = this.gameObject.GetComponent<Animator>();
+		controller = GetComponent<CharacterController>();
 		/*GameManager.gameStarter += gameStart;
 		GameManager.gameEnder += gameEnd;*/
 	}
@@ -34,15 +28,15 @@ public class Doge : MonoBehaviour {
 		if(newPos.y > maxGravity){
 			newPos.y += gravity * Time.deltaTime;
 		}
-
-		/*if(!controller.isGrounded){
-			height = transform.localPosition.y;
+		controller.Move(newPos);
+		if(!controller.isGrounded){
+		height = transform.localPosition.y;
 			if(height == checkHeight){
 				newPos.y = 0f;
 				controller.Move(newPos);
-				checkHeight = height;
 			}
-		}*/
+			checkHeight = height;
+		}
 		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245)){
 			print ("YOU WIN");
 			enabled = false;
@@ -52,32 +46,11 @@ public class Doge : MonoBehaviour {
 			enabled = false;
 			//Cat.disableCat();
 		}
-		moveDir = Input.GetAxis ("Horizontal2");
-		if (moveDir < 0 && ! faceL) {
-			faceL = true;
-			scale.x *= -1f;
-			transform.localScale = scale;
-		}
-		if (moveDir > 0 && faceL) {
-			faceL = false;
-			scale.x *= -1f;
-			transform.localScale = scale;
-		}
-		if (moveDir != 0){
-			animator.SetBool ("isWalkingDoge", true);
-		}
-		if (Input.GetAxis ("Horizontal2") != 0) {
-			animator.SetBool ("isWalkingDoge", true);
-		}
-		if (Input.GetAxis ("Horizontal2") == 0) {
-			animator.SetBool ("isWalkingDoge", false);
-		}
-		controller.Move(newPos);
 	}	
 	void Jump(){
-		if(count <= 1){
+		if(count < 1){
 			newPos.y = jumpHeight;
-			count += 1;
+			++count;
 		}
 	}
 	public void gameStart() {

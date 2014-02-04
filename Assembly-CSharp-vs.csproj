@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}</ProjectGuid>
+	<ProjectGuid>{E39185D3-2CB1-0FC6-CB27-DB001F895C23}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -54,10 +54,8 @@
      <Compile Include="Assets\AI\EnemyControl.cs" />
      <Compile Include="Assets\Cat\Cat.cs" />
      <Compile Include="Assets\Doge\Doge.cs" />
-     <Compile Include="Assets\GameManager\BoneCounter.cs" />
      <Compile Include="Assets\GameManager\CameraControl.cs" />
      <Compile Include="Assets\GameManager\GameManager.cs" />
-     <Compile Include="Assets\GameManager\MiceCounter.cs" />
      <Compile Include="Assets\GameObjects\Bone.cs" />
      <Compile Include="Assets\GameObjects\Mouse.cs" />
      <Compile Include="Assets\LevelDesign\MovePlatform.cs" />
