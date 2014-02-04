@@ -11,7 +11,7 @@ public class Cat : MonoBehaviour {
 	private float height = 0f;
 	private float checkHeight;
 	public int count = 0;
-
+	//this is a comment
 	//public SpriteRenderer controlSprite;
 
 	public Vector2 getPosition(){
