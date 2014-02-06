@@ -1,28 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Bone : MonoBehaviour {
+	public int boneCount = 0;
+	public GUIText DogeHUD;
 
 	void Start () {
 
 	}
-	void onTriggerEnter(){
-		if(this.gameObject.collider){
-			print ("Collection");
-			if(this.gameObject != null){
-				GameObject.Destroy(this.gameObject);
-			}
+
+	void Update () {
+		DogeHUD.text = "Doge Bones: " + (int)boneCount;
+	}
+
+	void OnTriggerEnter(Collider other){
+		//print ("Collision");
+		if(other.gameObject.name.Equals("DogeParent")){
+			print ("BONE COLLECTED");
+			GameObject.Destroy(this.gameObject);
+			++boneCount;
+			/////coommeeentt
 		}
 	}
-	void Update () {
-		onTriggerEnter();
-	}
-
-	/*void OnCollisionEnter(Collision collision){
-			if(collision.gameObject.name == "enemy"){
-				Destroy(this.gameObject);
-			}
-
-	}*/
 }

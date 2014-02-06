@@ -10,6 +10,6 @@ public class BoneCounter : MonoBehaviour {
 	}
 
 	void Update () {
-		//DogeBones.text = somethingsomethingcounter;
+//		DogeBones.text = somethingsomethingcounter;
 	}
 }
