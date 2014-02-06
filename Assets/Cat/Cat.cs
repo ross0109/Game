@@ -15,7 +15,8 @@ public class Cat : MonoBehaviour {
 	float moveDir;
 	bool faceL = false;
 	Vector3 scale = new Vector3(1f, 1f, 1f);
-
+	public int mouseCount = 0;
+	public GUIText CatHUD;
 
 
 	void Start () {
@@ -74,6 +75,13 @@ public class Cat : MonoBehaviour {
 		}
 		if (Input.GetAxis ("Horizontal1") == 0) {
 			animator.SetBool ("isWalkingCat", false);
+		}
+		CatHUD.text = "Cat Mice: " + (int)mouseCount;
+	}
+	void OnTriggerEnter(Collider other){
+		if(other.gameObject.name.Equals("Mouse")){
+			++mouseCount;
+
 		}
 	}
 	void Jump(){

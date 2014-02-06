@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Doge\Doge.cs">
+    <Files>
+      <File FileName="Assets\GameObjects\Bone.cs" Line="18" Column="24" />
+      <File FileName="Assets\Doge\Doge.cs" Line="22" Column="30" />
+      <File FileName="Assets\Cat\Cat.cs" Line="79" Column="48" />
+      <File FileName="Assets\GameObjects\Mouse.cs" Line="4" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
