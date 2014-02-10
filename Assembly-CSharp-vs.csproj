@@ -58,8 +58,6 @@
      <Compile Include="Assets\GameManager\CameraControl.cs" />
      <Compile Include="Assets\GameManager\GameManager.cs" />
      <Compile Include="Assets\GameManager\MiceCounter.cs" />
-     <Compile Include="Assets\GameObjects\Bone.cs" />
-     <Compile Include="Assets\GameObjects\Mouse.cs" />
      <Compile Include="Assets\LevelDesign\MovePlatform.cs" />
      <Compile Include="Assets\LevelDesign\Platorm1.cs" />
      <Compile Include="Assets\LevelDesign\WinningPlatform.cs" />

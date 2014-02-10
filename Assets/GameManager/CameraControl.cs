@@ -24,5 +24,11 @@ public class CameraControl : MonoBehaviour {
 		center.z = -15f;
 		transform.localPosition = center;
 		transform.camera.orthographicSize = distance;
+		if (distance > 30) {
+			transform.camera.orthographicSize = 30;
+		}
+		if(distance < 10){
+			transform.camera.orthographicSize = 10;
+		}
 	}
 }

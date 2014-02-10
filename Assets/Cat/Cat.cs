@@ -8,16 +8,19 @@ public class Cat : MonoBehaviour {
 	private float speed = 15f;
 	private float jumpHeight = .4f;
 	private float maxGravity = -.4f;
-	protected CharacterController controller;
+	public CharacterController controller;
 	private float height = 0f;
 	private float checkHeight;
 	public int count = 0;
 	float moveDir;
 	bool faceL = false;
 	Vector3 scale = new Vector3(1f, 1f, 1f);
-	public int mouseCount = 0;
 	public GUIText CatHUD;
+	public int mouseCount = 0;
 
+	public Vector3 sendLocPos(){
+		return transform.localPosition;
+	}
 
 	void Start () {
 		controller = transform.GetComponent<CharacterController>();
@@ -80,8 +83,9 @@ public class Cat : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other){
 		if(other.gameObject.name.Equals("Mouse")){
+			print ("MOUSE COLLECTED");
+			GameObject.Destroy(other.gameObject);
 			++mouseCount;
-
 		}
 	}
 	void Jump(){
@@ -96,11 +100,4 @@ public class Cat : MonoBehaviour {
 	public void gameEnd() {
 		enabled = false;
 	}
-	public void disableCat(){
-		enabled = false;
-	}
-	public Collider CatCollision(){
-		return this.gameObject.collider;
-	}
-
 }
