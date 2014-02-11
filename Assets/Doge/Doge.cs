@@ -5,7 +5,7 @@ public class Doge : MonoBehaviour {
 	Animator animator;
 	public Vector2 newPos = new Vector2 (0f, 0f);
 	private float gravity = -1f;
-	private float speed = 10f;
+	private float speed = 12.5f;
 	private float jumpHeight = .4f;
 	private float maxGravity = -.4f;
 	public CharacterController controller;
@@ -57,7 +57,7 @@ public class Doge : MonoBehaviour {
 				checkHeight = height;
 			}
 		}*/
-		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245)){
+		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245) && boneCount == 7){
 			print ("YOU WIN");
 			enabled = false;
 		}

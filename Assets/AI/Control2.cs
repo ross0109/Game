@@ -13,5 +13,10 @@ public class Control2 : EnemyControl {
 	// Update is called once per frame
 	void Update () {
 		movement();
+	}	
+	void OnTriggerEnter(Collider other){
+		if(other.gameObject.name.Equals("DogeParent") || other.gameObject.name.Equals("CatParent")){
+			print ("Captured!");
+		}
 	}
 }

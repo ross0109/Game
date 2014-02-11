@@ -51,7 +51,7 @@ public class Cat : MonoBehaviour {
 		}
 		checkHeight = height;
 
-		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245)){
+		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245) && mouseCount == 7){
 			print ("YOU WIN");
 			enabled = false;
 		}
