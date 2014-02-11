@@ -5,7 +5,7 @@ public class Doge : MonoBehaviour {
 	Animator animator;
 	public Vector2 newPos = new Vector2 (0f, 0f);
 	private float gravity = -1f;
-	private float speed = 10f;
+	private float speed = 12.5f;
 	private float jumpHeight = .4f;
 	private float maxGravity = -.4f;
 	public CharacterController controller;
@@ -15,15 +15,13 @@ public class Doge : MonoBehaviour {
 	float moveDir;
 	bool faceL = false;
 	Vector3 scale = new Vector3(1f, 1f, 1f);
-	public static GUIText DogeHUD;
-	public static int boneCount = 0;
-
+	public GUIText DogeHUD;
+	public int boneCount = 0;
 
 	public Vector3 sendLocPos(){
 		return transform.localPosition;
 	}
-
-		
+	
 	void Start () {
 		controller = transform.GetComponent<CharacterController>();
 		animator = this.gameObject.GetComponentInChildren<Animator>();
@@ -59,7 +57,7 @@ public class Doge : MonoBehaviour {
 				checkHeight = height;
 			}
 		}*/
-		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245)){
+		if((transform.localPosition.y >= -10 && transform.localPosition.y <= -8) &&(transform.localPosition.x <= 265 && transform.localPosition.x >= 245) && boneCount == 7){
 			print ("YOU WIN");
 			enabled = false;
 		}
@@ -87,15 +85,15 @@ public class Doge : MonoBehaviour {
 		if (Input.GetAxis ("Horizontal2") == 0) {
 			animator.SetBool ("isWalkingDoge", false);
 		}
-		print (boneCount);
-		//DogeHUD.text = "Doge Bones: " + (int)boneCount;
+		DogeHUD.text = "Doge Bones: " + (int)boneCount;
 	}	
-	/*void OnTriggerEnter(Collider other){
+	void OnTriggerEnter(Collider other){
 		if(other.gameObject.name.Equals("Bone")){
+			print ("BONE COLLECTED");
+			GameObject.Destroy(other.gameObject);
 			++boneCount;
-
 		}
-	}*/
+	}
 	void Jump(){
 		if(count < 1){
 			newPos.y = jumpHeight;

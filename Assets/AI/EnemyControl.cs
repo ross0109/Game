@@ -63,7 +63,7 @@ public class EnemyControl : MonoBehaviour {
 		//scenario if the pastPos equals the localPos, then the enemy is not moving. only perform the movement statements if it is moving
 		controller.Move(newPos);
 	}
-	void OnTriggerEvent(Collider other){
+	void OnTriggerEnter(Collider other){
 		if(other.gameObject.name.Equals("DogeParent") || other.gameObject.name.Equals("CatParent")){
 			print ("Captured!");
 		}

@@ -14,4 +14,9 @@ public class Control4 : EnemyControl {
 	void Update () {
 		movement();
 	}
+	void OnTriggerEnter(Collider other){
+		if(other.gameObject.name.Equals("DogeParent") || other.gameObject.name.Equals("CatParent")){
+			print ("Captured!");
+		}
+	}
 }
